@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title></title>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link -->
+    <!--   href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" -->
+    <!--   rel="stylesheet" -->
+    <!--   type="text/css" -->
+    <!-- /> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -12,12 +16,15 @@
           extend: {
             colors: {
               clifford: "#da373d",
-              main: "#1D3768",
-              white: "#F5F5F5",
-              purple: "#595b8a",
-              yellow: "#fa9600",
-              green: "#30BE0D",
-              red: "#C80D0D",
+              main: "#0E0AB0",
+              gray: "#959393",
+              "gray-2": "#F1F1F1",
+              "gray-3": "#F8F5F5",
+            },
+            backgroundImage: {
+              header: "url('./public/images/bg-header.png')",
+              offers: "url('./public/images/Rectangle 56.png')",
+              footer: "url('./public/images/Rectangle 95.png')",
             },
           },
         },
@@ -27,1384 +34,924 @@
 
   <body>
     <header>
-      <nav class="bg-main relative">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <!-- Mobile menu button-->
-              <button
-                onclick="handleOpenCloseMenu()"
-                class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
+      <section>
+        <div class="bg-main">
+          <div class="flex gap-4 ml-4 md:ml-8 py-1">
+            <img src="./public/images/icon-left.svg" alt="" />
+            <span class="uppercase text-white">
+              cHUYÊN: CỬA LƯỚI - GIÀN PHƠI THÔNG MINH - LƯỚI AN TOÀN MÁI HIÊN DI
+              ĐỘNG - BẠT XẾP - RÈM CUỐN
+            </span>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div
+          class="bg-header bg-cover flex flex-wrap justify-around items-center text-main py-3"
+        >
+          <img src="./public/images/logo.png" alt="" />
+          <div class="flex flex-col items-center">
+            <div class="flex">
+              <div
+                class="border-t-4 border-main w-24 md:w-28 translate-y-1/2"
+              ></div>
+              <span class="text-xl font-bold before:boder-t-4 mx-2 uppercase"
+                >XÂY DỰNG</span
               >
-                <span class="sr-only">Open main menu</span>
-                <!--
-                Icon when menu is closed.
-
-                Menu open: "hidden", Menu closed: "block"
-              -->
-                <svg
-                  class="block h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-                <!--
-                Icon when menu is open.
-
-                Menu open: "block", Menu closed: "hidden"
-              -->
-                <svg
-                  class="hidden h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+              <div
+                class="border-t-4 border-main w-24 md:w-28 translate-y-1/2"
+              ></div>
             </div>
-            <div
-              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            <span class="text-5xl font-extrabold uppercase">THĂNG LONG</span>
+            <span class="font-semibold">Đ/c: Qúy Sơn, Lục Ngạn, Bắc Giang</span>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="text-lg text-center [text-shadow:_-1px_0_white,_0_1px_white,_1px_0_white,_0_-1px_white] font-bold"
+              >Hotline hỗ trợ</span
             >
-              <div class="flex flex-shrink-0 items-center">
-                <a
-                  class="block text-3xl sm:text-2xl lg:text-3xl text-white font-bold uppercase"
-                  >Ben House</a
-                >
-              </div>
-              <div class="basis-full flex hidden sm:ml-6 sm:block">
-                <div class="flex items-center justify-between h-full space-x-4">
-                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white font-bold uppercase hover:opacity-100"
-                    >Ben House</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Biệt Thự - Villa</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Homestay - Căn hộ</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Hotel</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Review</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-cente sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Liên Hệ</a
-                  >
-                  <div class="nav-search">
-                    <img
-                      src="./public/images/Icon-Search.svg"
-                      alt="icon-search"
-                    />
-                  </div>
-                </div>
-              </div>
+            <span
+              class="drop-shadow-lg text-2xl [text-shadow:_-1px_0_white,_0_1px_white,_1px_0_white,_0_-1px_white] font-bold"
+              >0976 831 924</span
+            >
+            <div class="flex justify-around">
+              <img
+                class="w-6 rounded"
+                src="./public/images/facebook-1-6856 1.svg"
+                alt=""
+              />
+              <img
+                class="w-6 rounded"
+                src="./public/images/messenger-1-69740 1.svg"
+                alt=""
+              />
+              <img
+                class="w-6 rounded"
+                src="./public/images/viber-2066 1.svg"
+                alt=""
+              />
+              <img
+                class="w-6 rounded"
+                src="./public/images/youtube-8483 1.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div
-          class="absolute z-10 w-full bg-main sm:hidden hidden"
-          id="mobile-menu"
-        >
-          <div class="space-y-1 px-2 pt-2 pb-3">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a
-              href="#"
-              class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-              aria-current="page"
-              >Ben House</a
+      </section>
+      <section>
+        <div class="bg-main">
+          <div class="container mx-auto flex justify-around py-2">
+            <div class="flex flex-col items-center hover:cursor-pointer">
+              <img class="w-6" src="./public/images/trangchu 1.svg" alt="" />
+              <span
+                class="font-semibold text-main text-center bg-white px-1 rounded uppercase"
+                >trang chủ</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center group/item hover:cursor-pointer"
             >
-
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Biệt Thự - Villa</a
+              <img class="w-6" src="./public/images/gioithieu 1.svg" alt="" />
+              <span
+                class="font-semibold text-center text-white px-1 group-hover/item:text-main group-hover/item:bg-white px-1 rounded uppercase"
+                >GIỚI THIỆU</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center group/item hover:cursor-pointer"
             >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Homestay - Căn hộ</a
+              <img class="w-6" src="./public/images/sanpham 1.svg" alt="" />
+              <span
+                class="font-semibold text-center text-white px-1 group-hover/item:text-main group-hover/item:bg-white px-1 rounded uppercase"
+                >CÔNG TRÌNH</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center group/item hover:cursor-pointer"
             >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Hotel</a
+              <img class="w-6" src="./public/images/sanpham 1.svg" alt="" />
+              <span
+                class="font-semibold text-center text-white px-1 group-hover/item:text-main group-hover/item:bg-white px-1 rounded uppercase"
+                >TUYỂN NPP</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center group/item hover:cursor-pointer"
             >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Review</a
+              <img class="w-6" src="./public/images/sanpham 1.svg" alt="" />
+              <span
+                class="font-semibold text-center text-white px-1 group-hover/item:text-main group-hover/item:bg-white px-1 rounded uppercase"
+                >TUYỂN NPP</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center group/item hover:cursor-pointer"
             >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Liên Hệ</a
+              <img class="w-6" src="./public/images/tintuc 1.svg" alt="" />
+              <span
+                class="font-semibold text-center text-white px-1 group-hover/item:text-main group-hover/item:bg-white px-1 rounded uppercase"
+                >TIN TỨC</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center group/item hover:cursor-pointer"
             >
-
-            <div>
+              <img class="w-6" src="./public/images/lienhe 1.svg" alt="" />
+              <span
+                class="font-semibold text-center text-white px-1 group-hover/item:text-main group-hover/item:bg-white px-1 rounded uppercase"
+                >LIÊN HỆ</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <div class="container mx-auto grid grid-cols-4 gap-4 mt-4 px-4 sm:px-2">
+          <div
+            class="col-start-1 col-end-5 md:col-end-4 lg:col-start-2 grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-4"
+          >
+            <div class="flex items-center gap-2">
+              <img
+                class="w-8 h-8"
+                src="./public/images/quality-9415 3.svg"
+                alt=""
+              />
+              <span>Sản Phẩm Chất Lượng Cao</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <img class="w-8 h-8" src="./public/images/5-6714 1.svg" alt="" />
+              <span>Giao Lắp Chuyên Nghiệp</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <img class="w-8 h-8" src="./public/images/5-6714 1.svg" alt="" />
+              <span>Bảo Hành Nhanh Gọn</span>
+            </div>
+          </div>
+          <div class="col-start-1 col-end-5 md:col-start-4 flex items-center">
+            <div class="flex w-full">
               <input
                 type="text"
                 name="book"
                 id="book"
-                class="w-full px-3 py-3 bg-white border text-gray-900 text-sm rounded-lg block"
-                placeholder="Search..."
+                class="w-full px-3 py-3 bg-white border border-main text-gray-900 text-sm rounded-l-lg block"
+                placeholder="Tìm kiếm sản phẩm "
                 required
               />
+              <div class="flex items-center bg-main px-4 rounded-r-lg">
+                <img src="./public/images/icon-search.svg" alt="" />
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section id="slider">
-        <div class="slider-item relative">
-          <img
-            class="w-full"
-            src="./public/images/Rectangle 2.png"
-            alt="slider-backgroud"
-          />
           <div
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 container mx-auto"
+            class="row-start-3 row-end-4 col-span-4 md:row-start-2 md:col-span-2 lg:row-end-3 lg:col-span-1 grid grid-rows-7"
           >
-            <div class="flex justify-around md:justify-between px-2">
-              <div class="icon-left">
-                <img src="./public/images/Icon-Left.svg" alt="icon-left" />
-              </div>
-              <div
-                class="slider-conten flex flex-col justify-center items-center"
+            <div
+              class="row-span-1 flex justify-center items-center gap-4 bg-main py-3 rounded-t-md"
+            >
+              <img class="w-6 h-6" src="./public/images/hamburger.svg" alt="" />
+              <span class="font-bold uppercase text-white"
+                >DANH MỤC SẢN PHẨM</span
               >
-                <div
-                  class="text-center md:text-4xl text-white uppercase font-bold"
-                >
-                  chào mừng bạn đến với
-                </div>
+            </div>
+            <div
+              class="row-span-6 grid grid-rows-6 border border-main/80 px-4 divide-y divide-solid rounded-b-md"
+            >
+              <div
+                class="flex items-center gap-4 py-3 md:py-0 pr-2 hover:pl-4 hover:pr-0"
+              >
+                <img class="w-6 h-6" src="./public/images/edit.svg" alt="" />
+                <span class="basis-full font-semibold uppercase">
+                  CỬA LƯỚI
+                </span>
                 <img
-                  class="h-16"
-                  src="./public/images/Screenshot (180) 5.png"
-                  alt="slider-backgroud"
+                  class="w-6 h-6"
+                  src="./public/images/icon-right.svg"
+                  alt=""
                 />
               </div>
-              <div class="icon-right">
-                <img src="./public/images/Icon-Right.svg" alt="icon-right" />
+              <div class="flex items-center gap-4 pr-2 hover:pl-4 hover:pr-0">
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/sankyo 1.svg"
+                  alt=""
+                />
+                <span class="basis-full font-semibold uppercase">
+                  GIÀN PHƠI THÔNG MINH
+                </span>
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/icon-right.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex items-center gap-4 pr-2 hover:pl-4 hover:pr-0">
+                <img class="w-6 h-6" src="./public/images/edit.svg" alt="" />
+                <span class="basis-full font-semibold uppercase">
+                  LƯỚI AN TOÀN
+                </span>
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/icon-right.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex items-center gap-4 pr-2 hover:pl-4 hover:pr-0">
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/sankyo 1.svg"
+                  alt=""
+                />
+                <span class="basis-full font-semibold uppercase">
+                  MÁI HIÊN DI ĐỘNG
+                </span>
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/icon-right.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex items-center gap-4 pr-2 hover:pl-4 hover:pr-0">
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/sankyo 1.svg"
+                  alt=""
+                />
+                <span class="basis-full font-semibold uppercase">
+                  BẠT XẾP
+                </span>
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/icon-right.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex items-center gap-4 pr-2 hover:pl-4 hover:pr-0">
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/sankyo 1.svg"
+                  alt=""
+                />
+                <span class="basis-full font-semibold uppercase">
+                  RÈM CUỐN
+                </span>
+                <img
+                  class="w-6 h-6"
+                  src="./public/images/icon-right.svg"
+                  alt=""
+                />
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section id="bookRoom">
-        <div
-          class="relative drop-shadow-md mx-auto mb-6 md:mb-0 md:translate-y-[-4rem]"
-        >
-          <img
-            class="rounded h-96 md:h-full md:mx-auto"
-            src="./public/images/Rectangle 3.png"
-            alt="book-room"
-          />
           <div
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            class="row-start-4 row-end-5 col-span-4 md:row-start-2 md:row-end-3 md:col-span-2 relative"
           >
-            <div class="w-80 pb-2 md:w-96 md:pb-0">
-              <span
-                class="block text-white text-xl text-center uppercase font-bold"
-                >đăng ký đặt phòng
-              </span>
-              <form action="">
-                <div class="flex flex-col">
-                  <label for="book" class="text-base text-white"
-                    >Bạn cần đặt gì?
-                  </label>
-                  <input
-                    type="text"
-                    name="book"
-                    id="book"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                  <label for="day" class="text-base text-white mt-2"
-                    >Số lượng ngày
-                  </label>
-                  <input
-                    type="text"
-                    name="day"
-                    id="day"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                  <label for="people" class="text-base text-white mt-2"
-                    >Số lượng người
-                  </label>
-                  <input
-                    type="text"
-                    name="people"
-                    id="people"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                  <label for="phone" class="text-base text-white mt-2"
-                    >Số điện thoại
-                  </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                </div>
-                <div class="h-fit min-h-full flex justify-end">
-                  <button
-                    class="inline-block bg-main text-yellow uppercase px-2 py-2 md:py-4 mt-2 rounded"
-                  >
-                    Đăng ký ngay
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="container px-2 mx-auto">
-          <div class="flex flex-col md:flex-row gap-4">
+            <button class="absolute top-1/2 left-4 transform -translate-y-1/2">
+              <img
+                class="w-8 h-8"
+                src="./public/images/icon-left1.svg"
+                alt=""
+              />
+            </button>
             <img
-              src="./public/images/Thiet-ke-chua-co-ten-19 1.png"
-              alt="Khu-can-ho-cao-cap-nhat-Vung-Tau"
+              class="w-full h-full rounded"
+              src="./public/images/Rectangle 4.png"
+              alt=""
             />
-            <div>
-              <h3 class="text-3xl text-center text-purple font-bold uppercase">
-                Ben House
-              </h3>
-              <h5 class="text-center text-2xl text-main font-bold">
-                Khu căn hộ cao cấp nhất Vũng Tàu
-              </h5>
-              <p class="text-center text-main">
-                BEN HOUSE tọa lạc trong toà nhà The Sóng – Vũng Tàu, được sinh
-                ra cho những chuyến đi đầy ngẫu hứng của người Sài Gòn, để chủ
-                nhân tìm về mỗi khi mệt mỏi, là nơi để chủ nhân tái tạo năng
-                lượng sau những ngày dài làm việc căng thẳng. Không chỉ sở hữu
-                vị trí “hơn cả kim cương”, The Sóng còn sở hữu kiến trúc độc đáo
-                được lấy cảm hứng từ những cơn sóng uốn lượn của biển cả. Hãy
-                đến với BEN HOUSE – The Sóng Vũng Tàu để tận hưởng những ngày
-                nghỉ trọn vẹn!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="text-center my-5">
-          <h3 class="text-3xl text-main font-bold uppercase">
-            biệt thự - villa
-          </h3>
-          <p class="text-base text-main">BEN HOUSE Nơi ta đến là nhà</p>
-        </div>
-        <div
-          class="card-list container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5 px-4 sm:px-2"
-        >
-          <!-- item 1 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
+            <button class="absolute top-1/2 right-4 transform -translate-y-1/2">
               <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 2 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 3 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 4 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="flex flex-col items-center my-14">
-          <h3 class="text-3xl text-main font-bold uppercase">
-            homestay - căn hộ
-          </h3>
-          <p class="text-base text-main">BEN HOUSE Nơi ta đến là nhà</p>
-          <div>
-            <img src="./public/images/Group 5.png" alt="" />
-          </div>
-        </div>
-        <div
-          class="card-list container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5 px-4 sm:px-2"
-        >
-          <!-- item 1 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 2 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 3 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 4 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="flex flex-col items-center mt-14 mb-12">
-          <h3 class="text-3xl text-main font-bold uppercase">
-            hotel khách sạn
-          </h3>
-          <div>
-            <img src="./public/images/Group 5.png" alt="" />
-          </div>
-        </div>
-        <div class="container mx-auto">
-          <div class="grid grid-cols-1 px-4 md:py-0 md:grid-cols-2 gap-4 my-5">
-            <div class="flex flex-col shadow-xl">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 15.png"
+                class="w-8 h-8"
+                src="./public/images/icon-right1.svg"
                 alt=""
               />
-              <div class="h-full flex flex-col justify-center items-center">
-                <span class="block text-xl">Phòng Premium</span>
-                <div class="pb-2">
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
+            </button>
+          </div>
+          <div
+            class="row-start-5 row-end-5 col-span-4 md:row-start-3 md:row-end-4 md:col-span-2 lg:row-start-2 lg:row-end-3 lg:col-span-1 grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2 gap-4"
+          >
+            <img
+              class="w-full h-full rounded"
+              src="./public/images/Rectangle 58.png"
+              alt=""
+            />
+            <img
+              class="w-full h-full rounded"
+              src="./public/images/Rectangle 59.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="bg-gray-2 pb-8 px-4 sm:px-2">
+          <div
+            class="flex justify-center items-center container mx-auto rounded-full bg-main py-4 mt-8"
+          >
+            <img
+              class="w-16 sm:w-32"
+              src="./public/images/Group 16.svg"
+              alt=""
+            />
+            <h3
+              class="text-xl text-center sm:text-3xl text-white font-bold before:boder-t-4 sm:mx-2 uppercase"
+            >
+              GIÁ SỐC HÔM NAY
+            </h3>
+            <img
+              class="w-16 sm:w-32"
+              src="./public/images/Group 16.svg"
+              alt=""
+            />
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 container mx-auto my-2"
+          >
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
+                >
+                <span class="text-clifford font-medium">1.100.000đ</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
+                >
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
               </div>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
                 >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
+                <span class="text-clifford font-medium">1.100.000đ</span>
               </div>
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
                 >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
               </div>
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
+            </div>
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
                 >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
+                <span class="text-clifford font-medium">1.100.000đ</span>
               </div>
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
                 >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
+                >
+                <span class="text-clifford font-medium">1.100.000đ</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
+                >
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
               </div>
             </div>
           </div>
-          <div class="h-fit min-h-full flex justify-center">
+          <div class="w-full text-center mt-8">
             <a
+              class="bg-main text-white text-center font-medium w-full px-8 py-2 uppercase rounded-md hover:bg-main/90 hover:border-slate-400 hover:border-2"
               href="#"
-              class="inline-block bg-main text-white uppercase px-4 py-4 mt-2 md:px-2 rounded"
-              >xem thêm</a
             >
+              XEM THÊM
+            </a>
           </div>
         </div>
       </section>
       <section>
-        <div class="relative">
-          <img
-            class="w-full"
-            src="./public/images/Screenshot (180) 1.png"
-            alt=""
-          />
-          <h2
-            class="absolute top-[9%] left-1/4 -translate-x-[15%] md:top-[20%] md:left-1/2 transform md:-translate-x-1/2 text-main text-3xl md:text-4xl font-bold uppercase"
-          >
-            địa điểm nổi bật
-          </h2>
+        <div class="bg-offers bg-no-repeat bg-cover bg-center px-4 sm:px-2">
           <div
-            class="absolute top-1/2 md:left-1/2 transform -translate-y-[35%] md:-translate-x-1/2"
+            class="flex justify-center items-center container mx-auto rounded-full py-4"
           >
-            <div class="flex gap-0.5 items-center px-4 md:px-0">
-              <div>
-                <img
-                  class="w-72 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 40.png"
-                  alt=""
-                />
-              </div>
-              <div class="flex flex-col gap-0.5 shadow-lg">
-                <img
-                  class="w-80 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-                <img
-                  class="border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-              </div>
-              <div class="flex flex-col gap-0.5 shadow-lg">
-                <img
-                  class="w-96 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 28.png"
-                  alt=""
-                />
-                <img
-                  class="border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 28.png"
-                  alt=""
-                />
-              </div>
-              <div class="flex flex-col gap-0.5 shadow-lg">
-                <img
-                  class="w-80 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-                <img
-                  class="border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="w-72 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 40.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h3 class="text-3xl text-center text-main font-bold mt-8 uppercase">
-          tin tức
-        </h3>
-        <div class="container mx-auto px-4 md:px-2">
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5"
-          >
-            <div class="flex flex-col shadow-xl rounded">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
-              />
-              <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
-              >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col shadow-xl rounded">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
-              />
-              <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
-              >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col shadow-xl rounded">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
-              />
-              <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
-              >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col shadow-xl rounded">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
-              />
-              <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
-              >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="relative">
-          <img
-            class="w-full h-72 sm:h-96 lg:h-[512px]"
-            src="./public/images/Rectangle 65.png"
-            alt=""
-          />
-          <div
-            class="absolute top-1/2 left-0 right-0 transform -translate-y-1/2"
-          >
-            <h2
-              class="text-center text-white font-bold text-xl md:text-3xl uppercase"
+            <img
+              class="w-24 sm:w-32"
+              src="./public/images/Group 13.svg"
+              alt=""
+            />
+            <h3
+              class="text-xl text-center sm:text-2xl md:text-3xl text-white font-bold mx-2 uppercase"
             >
-              đánh giá khách hàng
-            </h2>
-            <div class="container mx-auto mt-4 md:mt-8">
-              <div
-                class="grid grid-cols-1 justify-items-stretch sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-2"
+              CHƯƠNG TRÌNH ƯU ĐÃI
+            </h3>
+            <img
+              class="w-24 sm:w-32"
+              src="./public/images/Group 13.svg"
+              alt=""
+            />
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-3 gap-4 container mx-auto pb-10"
+          >
+            <div class="w-full h-full border-2 border-white rounded">
+              <img
+                class="w-full h-full rounded"
+                src="./public/images/Rectangle 63.png"
+                alt=""
+              />
+            </div>
+            <div class="w-full h-full border-2 border-white rounded">
+              <img
+                class="w-full h-full rounded"
+                src="./public/images/Rectangle 64.png"
+                alt=""
+              />
+            </div>
+            <div class="w-full h-full border-2 border-white rounded">
+              <img
+                class="w-full h-full rounded"
+                src="./public/images/Rectangle 62.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="bg-gray-2 pb-8">
+          <div class="container mx-auto">
+            <div class="flex justify-center items-center py-4">
+              <h3 class="text-3xl text-main font-bold mx-4 sm:mx-2 uppercase">
+                SẢN PHẨM CỦA CHÚNG TÔI
+              </h3>
+            </div>
+            <div class="flex flex-wrap items-center gap-4 px-4 sm:px-8">
+              <a
+                href="#"
+                class="bg-main text-white text-center border-2 boder-main font-medium px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
               >
-                <div
-                  class="flex gap-4 md:flex-col items-center justify-center h-full bg-main bg-opacity-60 p-4 pt-2 shadow-lg rounded"
+                NỔI BẬT
+              </a>
+              <a
+                href="#"
+                class="text-gray border-2 font-medium px-2 py-1 uppercase rounded-md hover:text-white hover:bg-main hover:border-gray"
+              >
+                CỬA LƯỚI
+              </a>
+              <a
+                href="#"
+                class="text-gray border-2 font-medium px-2 py-1 uppercase rounded-md hover:text-white hover:bg-main hover:border-gray"
+              >
+                GIÀN PHƠI THÔNG MINH
+              </a>
+              <a
+                href="#"
+                class="text-gray border-2 font-medium px-2 py-1 uppercase rounded-md hover:text-white hover:bg-main hover:border-gray"
+              >
+                LƯỚI AN TOÀN
+              </a>
+              <a
+                href="#"
+                class="text-gray border-2 font-medium px-2 py-1 uppercase rounded-md hover:text-white hover:bg-main hover:border-gray"
+              >
+                MÁI HIÊN DI ĐỘNG
+              </a>
+              <a
+                href="#"
+                class="text-gray border-2 font-medium px-2 py-1 uppercase rounded-md hover:text-white hover:bg-main hover:border-gray"
+              >
+                BẠT XẾP
+              </a>
+              <a
+                href="#"
+                class="text-gray border-2 font-medium px-2 py-1 uppercase rounded-md hover:text-white hover:bg-main hover:border-gray"
+              >
+                RÈM CUỐN
+              </a>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 container mx-auto my-2 px-4 sm:px-2"
+          >
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
                 >
+                <span class="text-clifford font-medium">1.100.000đ</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
+                >
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
+                >
+                <span class="text-clifford font-medium">1.100.000đ</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
+                >
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
+                >
+                <span class="text-clifford font-medium">1.100.000đ</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
+                >
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-center items-center w-full h-full px-2 rounded-lg shadow-xl border border-slate-400/25 py-2"
+            >
+              <img
+                class="w-full rounded-md"
+                src="./public/images/Rectangle 66.png"
+                alt=""
+              />
+              <h5 class="font-medium mt-4 uppercase">MÁI HIÊN DI ĐỘNG</h5>
+              <div class="flex justify-around w-8/12">
+                <span class="text-gray font-medium line-through"
+                  >1.800.000đ</span
+                >
+                <span class="text-clifford font-medium">1.100.000đ</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full mt-2 mb-4">
+                <a
+                  href="#"
+                  class="bg-main text-white text-center border-2 boder-main font-medium w-full px-4 py-1 uppercase rounded-md hover:bg-main/90 hover:border-slate-400"
+                >
+                  CHI TIẾT
+                </a>
+                <a
+                  href="#"
+                  class="text-gray text-center border-2 font-medium w-full px-2 py-1 uppercase rounded-md hover:text-white hover:bg-clifford hover:border-gray"
+                >
+                  LIÊN HỆ
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full text-center mt-8">
+            <a
+              class="bg-main text-white text-center font-medium w-full px-8 py-2 uppercase rounded-md hover:bg-main/90 hover:border-slate-400 hover:border-2"
+              href="#"
+            >
+              XEM THÊM
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="bg-offers bg-cover bg-center">
+          <div class="container mx-auto px-4 sm:px-2">
+            <h3
+              class="text-2xl sm:text-3xl text-white text-center pt-12 pb-8 font-bold mx-2 uppercase"
+            >
+              ĐĂNG KÝ NHÀ PHÂN PHỐI
+            </h3>
+            <form>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-28 gap-y-8 pb-12"
+              >
+                <div class="row-start-2 md:row-start-1 flex flex-col gap-4">
+                  <div class="flex gap-4">
+                    <input
+                      type="text"
+                      class="bg-gray-2/80 w-full placeholder:text-black/50 px-4 py-2 border-2 border-white/20 rounded"
+                      placeholder="Họ Và Tên"
+                    />
+                    <input
+                      type="text"
+                      class="bg-gray-2/80 w-full placeholder:text-black/50 px-4 py-2 border-2 border-white/20 rounded"
+                      placeholder="Số điện thoại"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    class="bg-gray-2/80 placeholder:text-black/50 px-4 py-2 border-2 border-white/20 rounded"
+                    placeholder="Email:"
+                  />
+                  <input
+                    type="text"
+                    class="bg-gray-2/80 placeholder:text-black/50 px-4 py-2 border-2 border-white/20 rounded"
+                    placeholder="Địa chỉ:"
+                  />
+                  <textarea
+                    class="h-full placeholder:text-black/50 bg-gray-2/80 px-4 py-2 border-2 border-white/20 rounded"
+                    rows="3"
+                    cols="4"
+                    placeholder="Nội dung"
+                  ></textarea>
+                </div>
+                <div class="row-start-1 border-2 rounded-md">
                   <img
-                    class="w-12 h-12 md:w-20 md:h-20 rounded-full"
-                    src="./public/images/Ellipse 6.png"
+                    class="w-full h-full"
+                    src="./public/images/Rectangle 104.png"
                     alt=""
                   />
-                  <div class="flex flex-col md:items-center md:justify-center">
-                    <div>
-                      <div class="flex mt-1">
-                        <span class="text-2xl text-yellow">5/5</span>
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                      </div>
-                      <h3
-                        class="text-lg md:text-2xl text-white md:text-center font-bold"
-                      >
-                        mai linh
-                      </h3>
-                    </div>
-                    <div>
-                      <p class="text-white">
-                        Trải nghiệm tại Căn hộ Prenium thật tuyệt với gia đình
-                        tôi, căn hộ có đầy đủ tiện nghi, được ở đây lâu chắc
-                        chúng tôi sẽ thọ thêm 10 năm tuổi vì đây chính là nơi
-                        đáng sống!
-                      </p>
-                    </div>
+                </div>
+                <div class="flex justify-end">
+                  <div>
+                    <a
+                      href="#"
+                      class="bg-main text-white text-center font-medium w-full px-8 py-2 uppercase rounded-md hover:bg-main/90 hover:border-slate-400 hover:border-2"
+                    >
+                      GỬI ĐI
+                    </a>
                   </div>
                 </div>
-                <div class="hidden w-full sm:block sm:w-auto">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container mx-auto py-8 px-4 sm:px-2">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <h3 class="text-3xl text-main font-bold mx-2 uppercase">TIN TỨC</h3>
+            <div class="grid grid-cols-3 gap-4">
+              <div
+                class="row-start-2 sm:row-start-1 col-start-1 col-end-4 sm:col-end-3 flex flex-col gap-4"
+              >
+                <div class="flex gap-4">
                   <div
-                    class="flex flex-col items-center justify-center h-full bg-main bg-opacity-60 p-4 pt-2 shadow-lg rounded"
+                    class="flex flex-col justify-center items-center bg-main text-white font-bold text-xl px-4 py-2 rounded"
                   >
-                    <img
-                      class="rounded-full"
-                      src="./public/images/Ellipse 6.png"
-                      alt=""
-                    />
-                    <div class="flex mt-1">
-                      <span class="text-2xl text-yellow">5/5</span>
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                    </div>
-                    <h3 class="text-2xl text-white font-bold">mai linh</h3>
-                    <p class="text-white">
-                      Trải nghiệm tại Căn hộ Prenium thật tuyệt với gia đình
-                      tôi, căn hộ có đầy đủ tiện nghi, được ở đây lâu chắc chúng
-                      tôi sẽ thọ thêm 10 năm tuổi vì đây chính là nơi đáng sống!
-                    </p>
+                    <span>06</span>
+                    <span>2023</span>
                   </div>
+                  <p class="font-medium">
+                    Toàn bộ hệ thống 50 chi nhánh Thẩm mỹ viện Seoul Spa đều
+                    được thiết kế.
+                  </p>
                 </div>
-                <div class="hidden w-full lg:block lg:w-auto">
+                <p>
+                  Toàn bộ hệ thống 50 chi nhánh Thẩm mỹ viện Seoul Spa đều được
+                  thiết kế với kiến trúc hiện đại, đạt tiêu chuẩn đẳng c��p 5
+                  sao.
+                </p>
+              </div>
+              <img
+                src="./public/images/Rectangle 43.png"
+                class="row-start-1 col-span-3 sm:col-span-1 h-full w-full rounded"
+                alt=""
+              />
+              <div
+                class="row-start-4 sm:row-start-2 col-start-1 sm:col-start-2 col-end-4 flex flex-col gap-4"
+              >
+                <div class="flex gap-4">
                   <div
-                    class="flex flex-col items-center justify-center h-full bg-main bg-opacity-60 p-4 pt-2 shadow-lg rounded"
+                    class="flex flex-col justify-center items-center bg-main text-white font-bold text-xl px-4 py-2 rounded"
                   >
-                    <img
-                      class="rounded-full"
-                      src="./public/images/Ellipse 6.png"
-                      alt=""
-                    />
-                    <div class="flex mt-1">
-                      <span class="text-2xl text-yellow">5/5</span>
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                    </div>
-                    <h3 class="text-2xl text-white font-bold">mai linh</h3>
-                    <p class="text-white">
-                      Trải nghiệm tại Căn hộ Prenium thật tuyệt với gia đình
-                      tôi, căn hộ có đầy đủ tiện nghi, được ở đây lâu chắc chúng
-                      tôi sẽ thọ thêm 10 năm tuổi vì đây chính là nơi đáng sống!
-                    </p>
+                    <span>06</span>
+                    <span>2023</span>
                   </div>
+                  <p class="font-medium">
+                    Toàn bộ hệ thống 50 chi nhánh Thẩm mỹ viện Seoul Spa đều
+                    được thiết kế.
+                  </p>
                 </div>
+                <p>
+                  Toàn bộ hệ thống 50 chi nhánh Thẩm mỹ viện Seoul Spa đều được
+                  thi���t kế với kiến trúc hiện đại, đạt tiêu chuẩn đẳng cấp 5
+                  sao.
+                </p>
+              </div>
+              <img
+                src="./public/images/Rectangle 43.png"
+                class="row-start-3 row-end-4 col-span-3 sm:col-span-1 sm:row-start-2 sm:row-end-3 h-full w-full rounded"
+                alt=""
+              />
+              <div
+                class="row-start-6 sm:row-start-3 col-start-1 col-end-4 sm:col-end-3 flex flex-col gap-4"
+              >
+                <div class="flex gap-4">
+                  <div
+                    class="flex flex-col justify-center items-center bg-main text-white font-bold text-xl px-4 py-2 rounded"
+                  >
+                    <span>06</span>
+                    <span>2023</span>
+                  </div>
+                  <p class="font-medium">
+                    Toàn bộ hệ thống 50 chi nhánh Thẩm mỹ viện Seoul Spa đều
+                    được thiết k��.
+                  </p>
+                </div>
+                <p>
+                  Toàn b�� hệ thống 50 chi nhánh Thẩm mỹ viện Seoul Spa đều được
+                  thiết kế với kiến trúc hiện đại, đạt tiêu chuẩn đẳng cấp 5
+                  sao.
+                </p>
+              </div>
+              <img
+                src="./public/images/Rectangle 43.png"
+                class="row-start-5 col-span-4 sm:row-start-3 h-full w-full rounded"
+                alt=""
+              />
+            </div>
+            <h3
+              class="lg:row-start-1 lg:row-end-2 lg:col-start-2 text-3xl text-main font-bold mx-2 uppercase"
+            >
+              VIDEO
+            </h3>
+            <div class="grid grid-cols-3 gap-4">
+              <div
+                class="row-start-1 row-end-1 md:row-end-3 col-span-3 relative"
+              >
+                <img
+                  src="./public/images/Rectangle 39.png"
+                  class="w-full h-full"
+                  alt=""
+                />
+                <img
+                  src="./public/images/play 1.png"
+                  class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                  alt=""
+                />
+              </div>
+              <div class="relative col-span-3 sm:col-span-1">
+                <img
+                  src="./public/images/Rectangle 40.png"
+                  class="w-full h-full rounded"
+                  alt=""
+                />
+                <img
+                  src="./public/images/play 1.png"
+                  class="sm:hidden absolute rounded-md top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                  alt=""
+                />
+                <img
+                  src="./public/images/play 2.png"
+                  class="hidden sm:block absolute rounded-md top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                  alt=""
+                />
+              </div>
+              <div class="relative col-span-3 sm:col-span-1">
+                <img
+                  src="./public/images/Rectangle 41.png"
+                  class="w-full h-full rounded"
+                  alt=""
+                />
+                <img
+                  src="./public/images/play 1.png"
+                  class="sm:hidden absolute rounded-md top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                  alt=""
+                />
+                <img
+                  src="./public/images/play 2.png"
+                  class="hidden sm:block absolute rounded-md top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                  alt=""
+                />
+              </div>
+              <div class="relative col-span-3 sm:col-span-1">
+                <img
+                  src="./public/images/Rectangle 42.png"
+                  class="w-full h-full rounded"
+                  alt=""
+                />
+                <img
+                  src="./public/images/play 1.png"
+                  class="sm:hidden absolute rounded-md top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                  alt=""
+                />
+                <img
+                  src="./public/images/play 2.png"
+                  class="hidden sm:block absolute rounded-md top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                  alt=""
+                />
               </div>
             </div>
           </div>
@@ -1412,141 +959,144 @@
       </section>
     </main>
     <footer>
-      <div class="mt-28 relative">
-        <img
-          class="w-full h-[972px] md:h-[512px] lg:h-[636px]"
-          src="./public/images/TheSongKV_1920x1080_logo 1.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 6.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 5.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 4.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 7.png"
-          alt=""
-        />
-        <div
-          class="absolute top-1/2 inset-x-10 transform -translate-y-1/2 lg:-translate-y-1/3"
-        >
-          <div class="flex flex-col md:flex-row gap-4">
-            <div class="w-full basis-2/5">
-              <h3 class="text-3xl text-center text-white font-bold uppercase">
-                Ben House
-              </h3>
-              <p class="text-white mt-4">
-                Tại BENHOUSE, không chỉ bố mẹ mà các thiên thần nhỏ luôn có thể
-                tìm thấy niềm vui ở bất cứ đâu: lúc thả mình trên những chiếc
-                giường êm ái, lúc tự tay nấu những món ăn yêu thích, hoặc lúc
-                thỏa thích đùa vui tại khu vực Vui chơi trẻ em, hồ bơi vô cực…
-                Đặc biệt hơn, chỉ cần băng qua con đường Thùy Vân, là cả nhà
-                mình đã có thể đến với bãi biển để tắm biển và vui chơi tại đây.
-              </p>
-            </div>
-            <div class="basis-1/5 text-white">
-              <h3 class="text-2xl text-center font-bold uppercase">
-                thông tin liên hệ
-              </h3>
-              <p class="mt-4">
-                Địa chỉ: 109/15 Võ Thị Sáu, Phường 2, Tp Vũng Tàu
-              </p>
-              <p>Hotline: 0937.686.079 - 0764.820.563</p>
-              <p>Email: maopq.mt@vietsov.com.vn</p>
-              <p>Website: benhousevungtau.com</p>
-              <p>
-                Bản đồ
-                <img
-                  class="inline rounded-full"
-                  src="./public/images/image 1.png"
-                  alt=""
-                />
-              </p>
-            </div>
-            <div class="basis-2/5 w-full h-full text-white">
-              <h3
-                class="text-2xl text-center sm:mb-5 md:mt-0 md:ml-5 font-bold uppercase"
-              >
-                quy trình làm việc
-              </h3>
-              <div
-                class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 ml-4 md:mt-4"
-              >
-                <ul class="list-disc">
-                  <li class="mb-4">Booking đặt lịch</li>
-                  <li class="mb-4">Check nhận phòng</li>
-                  <li class="mb-4">Chính sách thanh toánh</li>
-                  <li class="mb-4">Nhận phòng</li>
+      <div class="bg-footer bg-no-repeat bg-cover pt-12 pb-4">
+        <div class="container mx-auto px-4 sm:px-2">
+          <section>
+            <div class="flex flex-wrap sm:justify-around mb-4">
+              <div class="mb-4 lg:mb-0 lg:basis-2/5">
+                <h3
+                  class="text-xl sm:text-3xl text-main font-bold mb-2 uppercase"
+                >
+                  MÁI HIÊN MÁI XẾP THĂNG LONG
+                </h3>
+                <p>
+                  Lịch sử Hình thành và quá trình phát triển-Thương hiệu Mái
+                  Hiên mái che THĂNG LONG . Nhưng trước đó chúng tôi đã hoạt
+                  động trong ngành mái hiên-mái che-Mái xếp-bạt kéo-và ô dù Bạt
+                  che nắng với lịch sử ra đời từ những năm 2003. Chải qua quá
+                  trình hoạt động với rất nhiều thành công.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-2xl text-main font-bold mb-2 uppercase">
+                  DANH MỤC
+                </h4>
+                <ul class="list-disc font-medium ml-4">
+                  <li>Cửa Lưới</li>
+                  <li>Gian Phơi Thông Minh</li>
+                  <li>Lưới An Toàn</li>
+                  <li>Mái Hiên Di Động</li>
+                  <li>Bạt Xếp</li>
+                  <li>Rèm Cuốn</li>
                 </ul>
-                <div class="flex flex-col justify-around">
-                  <div class="pb-8">
-                    <a
-                      href="#"
-                      class="text-2xl font-bold px-6 py-2 bg-green rounded-full"
-                      >0937.686.079</a
-                    >
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="text-2xl font-bold px-6 py-2 bg-red rounded-full"
-                      >0764.820.563</a
-                    >
-                  </div>
+              </div>
+              <div>
+                <h4 class="text-2xl text-main font-bold mb-2 uppercase">
+                  FANPAGE
+                </h4>
+                <img src="./public/images/Rectangle 106.png" alt="" />
+                <div class="flex justify-end mt-2">
+                  <img
+                    class="w-6 h-6 rounded-full"
+                    src="./public/images/facebook-1-6856 1.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-6 h-6 rounded-full ml-2"
+                    src="./public/images/messenger-1-69740 1.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-6 h-6 rounded-full ml-2"
+                    src="./public/images/viber-2066 1.png"
+                    alt=""
+                  />
+                  <img
+                    class="w-6 h-6 rounded-full ml-2"
+                    src="./public/images/youtube-8483 1.png"
+                    alt=""
+                  />
                 </div>
               </div>
-              <div class="hidden w-auto sm:flex md:hidden lg:flex mt-4">
-                <img
-                  class="mr-4 sm:mb-2 lg:mr-4 w-1/2 h-1/2 sm:w-1/3 sm:h-1/3"
-                  src="./public/images/Rectangle 59.png"
-                  alt=""
-                />
-                <img
-                  class="w-1/2 h-1/2 sm:w-1/3 sm:h-1/3"
-                  src="./public/images/Rectangle 60.png"
-                  alt=""
-                />
+            </div>
+          </section>
+          <section>
+            <div
+              class="bg-main grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-8 lg:px-2 py-8 text-white rounded-lg"
+            >
+              <div class="flex lg:justify-center items-center gap-4">
+                <div class="border-2 p-4 rounded-full">
+                  <img
+                    src="./public/images/icon-location.svg"
+                    class="w-8 h-8"
+                    alt=""
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <span>Địa Chỉ: </span>
+                  <span>Qúy Sơn, Lục Ngạn, Bắc Giang</span>
+                </div>
+              </div>
+              <div
+                class="flex sm:justify-end lg:justify-center items-center gap-4"
+              >
+                <div class="border-2 p-4 rounded-full">
+                  <img
+                    src="./public/images/icon-hotline.svg"
+                    class="w-8 h-8"
+                    alt=""
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <span>Hotline: </span>
+                  <span>0976.831.924</span>
+                </div>
+              </div>
+              <div class="flex lg:justify-center items-center gap-4">
+                <div class="border-2 p-4 rounded-full">
+                  <img
+                    src="./public/images/icon-email.svg"
+                    class="w-8 h-8"
+                    alt=""
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <span>Email: </span>
+                  <span>tavannam@gmail.com</span>
+                </div>
+              </div>
+              <div
+                class="flex sm:justify-end lg:justify-center items-center gap-4"
+              >
+                <div class="border-2 p-4 rounded-full">
+                  <img
+                    src="./public/images/icon-web.svg"
+                    class="w-8 h-8"
+                    alt=""
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <span>Website </span>
+                  <span>tavannam.vn</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="absolute bottom-0 w-full bg-yellow">
-          <div
-            class="flex md:flex-row justify-around text-white py-2 px-2 md:px-0"
-          >
-            <span class="md:text-xl">
-              2023 &copy; BEN HOUSE designed by sotagroup.vn
-            </span>
-            <span class="md:text-xl"
-              >Đang online: 10 | Tổng truy cập: 144520</span
-            >
-          </div>
+          </section>
+          <section>
+            <div class="grid grid-cols-4 text-main mt-2">
+              <span class="col-span-4 mb-2 sm:mb-0 sm:col-span-2"
+                >Copyright 2023 ©maihienmaixepthanglong designed by
+                sotagroup.vn</span
+              >
+              <div class="col-span-2 justify-self-end gap-4">
+                <span class="mr-2">Đang online: 2</span>
+                <span class="mr-2">Hôm nay: 24</span>
+                <span>Tổng truy cập: 12556</span>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </footer>
-    <script>
-      let checkMenu = false;
-      const btnMenu = document.getElementById("mobile-menu");
-      function handleOpenCloseMenu() {
-        if (checkMenu) {
-          btnMenu.classList.add("hidden");
-          checkMenu = false;
-        } else {
-          btnMenu.classList.remove("hidden");
-          checkMenu = true;
-        }
-      }
-    </script>
   </body>
 </html>
