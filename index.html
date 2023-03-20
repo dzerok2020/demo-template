@@ -1,1536 +1,1225 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title></title>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
+          borderRadius: {
+            "b-mul": "51%/5%",
+            none: "0",
+            sm: "0.125rem",
+            DEFAULT: "0.25rem",
+            DEFAULT: "4px",
+            md: "0.375rem",
+            lg: "0.5rem",
+            full: "9999px",
+            large: "12px",
+          },
+          backgroundPosition: {
+            "p-mul":
+              "5% 30%, 98% 35%, 94% 90%, 3% 90%, 3% 6%, 30% 97%, 98% 12%, 93% 58%, 74% 6%, 19% 57%",
+          },
+          backgroundSize: {
+            "s-mul":
+              "clamp(171px, 22.22vw, 320px), clamp(171px, 22.22vw, 320px), clamp(179px, 23.33vw, 336px), clamp(171px, 22.22vw, 320px), clamp(133px, 17.36vw, 250px), clamp(96px, 12.5vw, 180px), clamp(64px, 8.33vw, 120px), clamp(64px, 8.33vw, 120px), clamp(27px, 3.47vw, 50px), clamp(53px, 6.94vw, 100px)",
+          },
           extend: {
             colors: {
               clifford: "#da373d",
-              main: "#1D3768",
-              white: "#F5F5F5",
-              purple: "#595b8a",
-              yellow: "#fa9600",
-              green: "#30BE0D",
-              red: "#C80D0D",
+              secondary: "#185abcff",
+              black: "rgb(60, 64, 67)",
+            },
+            backgroundImage: {
+              plans:
+                "url('https://lh3.googleusercontent.com/-bhbeivOHljigmIi8iihHskvgyATwfkZ7cevtWjUOIk9gnX9kvg_IzUtPny7M67QzF0Hwv3JRUi61Mf_PmEURsX33hoqOczDIBrUdA=rw-e365-w400'), url('https://lh3.googleusercontent.com/10DSmebLGu4MBsNm1qM0xo2KRtP6HynhJ5pUOuXtcUSEjCWSb2o7eklBEPzApNzxP1oAMHp_0PQvnbknq1D-IkIjawPghpptbkEA9g=rw-e365-w400'), url('https://lh3.googleusercontent.com/rUWCCudAmiBY5i50_Ghjg-KmiSmAAkWbRpmbAjiEZXsQ4NQMnB3GoD2OpcbcoECdGnoXdSN3lmMcUzQGSJSF6L8IN80UuS_a47yr7_U=rw-e365-w420'), url('https://lh3.googleusercontent.com/PJnFXzE1D42wunCy7DJk_FUrTyym2fgK38FygowtkM9HMq39J9siyVEAsYcy3A6rZAEF8YLhCt7fzK24hPzHUtN_SGivZ0cj1LRdYA=rw-e365-w400'), url('https://lh3.googleusercontent.com/CwSb1Ul9aJsNwjVOKoEFFYTg6tWR1vKQbEKao9n5NAcjO_vhUuHAqAOsV8tJ4Q7fTO1jzxLhEXj4nNpKiUINGXq-deeuSW6qaQIblNnN=rw-e365-w313'), url('https://lh3.googleusercontent.com/yZ-TLC-M8EsQnw_LZRLhzQHoTgdKmCk1wkqmZw7Qnr7wh7lT71fJxLaNacBGRv-BnOzWRaKFnEpDGKFdxxv-V1-2_2cF7-npL8et7bE=rw-e365-w225'), url('https://lh3.googleusercontent.com/6XZmuAltxBtFJfGmLy8uu3jHqWu3kyC8C66VMn6iZmukhzhyDnD6nH312wmmLhvepa5hO6RSE3aieZYKCvjcquPJfurCbQUNv-1VBQ=rw-e365-w150'), url('https://lh3.googleusercontent.com/-yq5iIs5xH3x-nwcha6TnNHm1eHfpP9tdnNl6gc-eSypIhI0Rm9OeLwb1C1HEV1wVEXGUBe84tjOx5HRvZ9n2TSVL9AP0oXLTv9I6XI=rw-e365-w150'), url('https://lh3.googleusercontent.com/NBl-RxXiEoLO__ka0pMl-X4mVXebEZHHw5o_xa3Z0609sU6C3SDDjXDutflMqo-MU4wQc63xYuzft276z0x0_jnQTdyhZT2W1bJ4NQ=rw-e365-w63'), url('https://lh3.googleusercontent.com/BcJdpgHJOvzV6l_IHZglaOs0q78u7ADWKzwfbtExa5mkn9S1ziJtOwN6mLfN2iYUVQm_y5CU9qxk-cSEpAjG8L47rVUkYYNd4pkb9TE=rw-e365-w125')",
             },
           },
         },
       };
     </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    </style>
+    <style>
+      @font-face {
+        font-family: "google-sans";
+        src: url("./public/fonts/Google_Sans-400-100_0-0_0.ttf");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "google-sans";
+        src: url("./public/fonts/Google_Sans-700-100_0-0_0.ttf");
+        font-weight: 700;
+        font-style: normal;
+      }
+      * {
+        font-family: "google-sans";
+      }
+      p {
+        font-family: "Roboto";
+      }
+    </style>
   </head>
-
   <body>
-    <header>
-      <nav class="bg-main relative">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <!-- Mobile menu button-->
-              <button
-                onclick="handleOpenCloseMenu()"
-                class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-              >
-                <span class="sr-only">Open main menu</span>
-                <!--
-                Icon when menu is closed.
+    <header class="fixed z-50 w-full bg-white">
+      <nav class="shadow-lg">
+        <div class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex flex-1 items-center gap-1 md:gap-0">
+              <div class="flex items-center sm:hidden">
+                <!-- Mobile menu button-->
+                <button
+                  onclick="handleOpenCloseMenu()"
+                  type="button"
+                  class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                >
+                  <span class="sr-only">Open main menu</span>
+                  <!--
+            Icon when menu is closed.
 
-                Menu open: "hidden", Menu closed: "block"
-              -->
-                <svg
-                  class="block h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-                <!--
-                Icon when menu is open.
-
-                Menu open: "block", Menu closed: "hidden"
-              -->
-                <svg
-                  class="hidden h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-            >
-              <div class="flex flex-shrink-0 items-center">
-                <a
-                  class="block text-3xl sm:text-2xl lg:text-3xl text-white font-bold uppercase"
-                  >Ben House</a
-                >
-              </div>
-              <div class="basis-full flex hidden sm:ml-6 sm:block">
-                <div class="flex items-center justify-between h-full space-x-4">
-                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white font-bold uppercase hover:opacity-100"
-                    >Ben House</a
+            Menu open: "hidden", Menu closed: "block"
+          -->
+                  <svg
+                    class="block h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
                   >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Biệt Thự - Villa</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Homestay - Căn hộ</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Hotel</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-center sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Review</a
-                  >
-                  <a
-                    href="#"
-                    class="text-base text-cente sm:text-sm lg:text-base text-white opacity-70 font-bold uppercase hover:opacity-100"
-                    >Liên Hệ</a
-                  >
-                  <div class="nav-search">
-                    <img
-                      src="./public/images/Icon-Search.svg"
-                      alt="icon-search"
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                     />
-                  </div>
+                  </svg>
+                  <!--
+            Icon when menu is open.
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+                  <svg
+                    class="hidden h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <a href="#!" class="flex flex-shrink-0 items-center">
+                <img
+                  class="block h-8 w-auto lg:hidden"
+                  alt="Google Fi logo"
+                  src="https://storage.googleapis.com/googwebreview.appspot.com/uploads/fi/google-fi.svg"
+                />
+                <img
+                  class="hidden h-8 w-auto lg:block"
+                  alt="Google Fi logo"
+                  src="https://storage.googleapis.com/googwebreview.appspot.com/uploads/fi/google-fi.svg"
+                />
+              </a>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <a
+                    href="#!"
+                    class="relative h-16 px-3 text-sm font-medium leading-[64px] after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:rounded-t-md after:bg-blue-500 hover:underline"
+                    aria-current="page"
+                  >
+                    Home
+                  </a>
+                  <a
+                    href="#!"
+                    class="h-16 text-sm leading-[64px] text-black hover:underline"
+                    aria-current="page"
+                  >
+                    Plans
+                  </a>
+                  <a
+                    href="#!"
+                    class="h-16 text-sm leading-[64px] text-black hover:underline"
+                    aria-current="page"
+                  >
+                    Phones
+                  </a>
+                  <a
+                    href="#!"
+                    class="h-16 text-sm leading-[64px] text-black hover:underline"
+                    aria-current="page"
+                  >
+                    Coverage
+                  </a>
                 </div>
               </div>
+            </div>
+            <div
+              class="flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+            >
+              <button
+                class="text-secondary hover:bg-secondary/25 mr-2 hidden rounded-full border-2 py-2 px-8 font-medium lg:block"
+              >
+                Sign in
+              </button>
+              <button
+                class="bg-secondary border-secondary hover:bg-secondary/80 hover:border-secondary/80 rounded-full border-2 px-8 py-2 font-medium text-white"
+              >
+                Join Fi
+              </button>
             </div>
           </div>
         </div>
 
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div
-          class="absolute z-10 w-full bg-main sm:hidden hidden"
-          id="mobile-menu"
-        >
+        <div class="hidden sm:hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pt-2 pb-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a
               href="#"
-              class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+              class="bg-secondary block rounded-md px-3 py-2 text-base font-medium text-white"
               aria-current="page"
-              >Ben House</a
+              >Home</a
             >
 
             <a
               href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Biệt Thự - Villa</a
-            >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Homestay - Căn hộ</a
-            >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Hotel</a
-            >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Review</a
-            >
-            <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-              >Liên Hệ</a
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Plans</a
             >
 
-            <div>
-              <input
-                type="text"
-                name="book"
-                id="book"
-                class="w-full px-3 py-3 bg-white border text-gray-900 text-sm rounded-lg block"
-                placeholder="Search..."
-                required
-              />
-            </div>
+            <a
+              href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Phones</a
+            >
+
+            <a
+              href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Coverage</a
+            >
           </div>
         </div>
       </nav>
     </header>
-    <main>
-      <section id="slider">
-        <div class="slider-item relative">
-          <img
-            class="w-full"
-            src="./public/images/Rectangle 2.png"
-            alt="slider-backgroud"
-          />
-          <div
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 container mx-auto"
-          >
-            <div class="flex justify-around md:justify-between px-2">
-              <div class="icon-left">
-                <img src="./public/images/Icon-Left.svg" alt="icon-left" />
-              </div>
-              <div
-                class="slider-conten flex flex-col justify-center items-center"
+    <main class="pt-16">
+      <section class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+        <div class="gird-cols-12 mx-6 grid items-center gap-4">
+          <div class="col-span-12 col-start-1 lg:col-span-5 lg:col-start-2">
+            <h1 class="mb-4 text-5xl font-bold">
+              Save big on Samsung Galaxy S23 Series phones for the family
+            </h1>
+            <p class="my-8">
+              Get up to $899 back whith eligible trade-in and 24 monthly bill
+              credits
+            </p>
+            <div>
+              <button
+                class="hover:bg-secondary/80 hover:border-secondary/80 bg-secondary border-secondary mt-4 rounded-full border-2 px-8 py-2 font-medium text-white"
               >
-                <div
-                  class="text-center md:text-4xl text-white uppercase font-bold"
-                >
-                  chào mừng bạn đến với
-                </div>
-                <img
-                  class="h-16"
-                  src="./public/images/Screenshot (180) 5.png"
-                  alt="slider-backgroud"
-                />
-              </div>
-              <div class="icon-right">
-                <img src="./public/images/Icon-Right.svg" alt="icon-right" />
-              </div>
+                Order now
+              </button>
+              <button
+                class="hover:bg-secondary/25 hover:border-secondary/25 text-secondary ml-2 rounded-full border-2 px-8 py-2 font-medium"
+              >
+                Join Fi
+              </button>
             </div>
+          </div>
+          <div class="col-span-12 col-start-1 lg:col-span-6 lg:col-start-7">
+            <img
+              class="w-full"
+              src="https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg"
+              alt="Samsung Galaxy S23 devices"
+              srcset="
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w100   100w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w200   200w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w300   300w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w400   400w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w500   500w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w600   600w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w700   700w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w800   800w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w900   900w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1000 1000w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1100 1100w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1200 1200w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1300 1300w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1400 1400w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1500 1500w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1600 1600w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1700 1700w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1800 1800w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w1900 1900w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2000 2000w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2100 2100w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2200 2200w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2300 2300w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2400 2400w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2500 2500w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2600 2600w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2700 2700w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2800 2800w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w2900 2900w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3000 3000w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3100 3100w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3200 3200w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3300 3300w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3400 3400w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3500 3500w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3600 3600w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3700 3700w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3800 3800w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w3900 3900w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4000 4000w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4100 4100w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4200 4200w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4300 4300w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4400 4400w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4500 4500w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4600 4600w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4700 4700w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4800 4800w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w4900 4900w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5000 5000w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5100 5100w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5200 5200w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5300 5300w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5400 5400w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5500 5500w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5600 5600w,
+                https://lh3.googleusercontent.com/jyHetQhGdcZV7d52GauYTwhrW_h60cpTBkV9S4NB5aeA-BSobgLAwz0GB-5hRkivNJhVwrm6GBXH9Kvs8jBnw3tUbXURUOSJ6l6ZDg=rw-e365-w5700 5700w
+              "
+              sizes="(min-width: 1024px) 684px, (min-width: 768px) and (max-width: 1023px) 714px, calc(100vw - 32px)"
+              loading="eager"
+              fetchpriority="high"
+              width="2542"
+              height="1695"
+            />
           </div>
         </div>
       </section>
-      <section id="bookRoom">
-        <div
-          class="relative drop-shadow-md mx-auto mb-6 md:mb-0 md:translate-y-[-4rem]"
-        >
-          <img
-            class="rounded h-96 md:h-full md:mx-auto"
-            src="./public/images/Rectangle 3.png"
-            alt="book-room"
-          />
-          <div
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          >
-            <div class="w-80 pb-2 md:w-96 md:pb-0">
-              <span
-                class="block text-white text-xl text-center uppercase font-bold"
-                >đăng ký đặt phòng
-              </span>
-              <form action="">
-                <div class="flex flex-col">
-                  <label for="book" class="text-base text-white"
-                    >Bạn cần đặt gì?
-                  </label>
-                  <input
-                    type="text"
-                    name="book"
-                    id="book"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                  <label for="day" class="text-base text-white mt-2"
-                    >Số lượng ngày
-                  </label>
-                  <input
-                    type="text"
-                    name="day"
-                    id="day"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                  <label for="people" class="text-base text-white mt-2"
-                    >Số lượng người
-                  </label>
-                  <input
-                    type="text"
-                    name="people"
-                    id="people"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                  <label for="phone" class="text-base text-white mt-2"
-                    >Số điện thoại
-                  </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    class="bg-white border text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="John"
-                    required
-                  />
-                </div>
-                <div class="h-fit min-h-full flex justify-end">
+      <section class="bg-[rgb(230,_244,_234)]">
+        <div class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-12 gap-6">
+            <div class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3">
+              <div class="flex flex-col items-center gap-6 pt-8 md:flex-row">
+                <img
+                  class="w-full md:w-1/3"
+                  src="https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg"
+                  alt="Image of Pixel 7 device"
+                  srcset="
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w100   100w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w200   200w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w300   300w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w400   400w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w500   500w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w600   600w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w700   700w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w800   800w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w900   900w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1000 1000w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1100 1100w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1200 1200w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1300 1300w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1400 1400w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1500 1500w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1600 1600w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1700 1700w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1800 1800w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w1900 1900w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2000 2000w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2100 2100w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2200 2200w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2300 2300w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2400 2400w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2500 2500w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2600 2600w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2700 2700w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2800 2800w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w2900 2900w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3000 3000w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3100 3100w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3200 3200w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3300 3300w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3400 3400w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3500 3500w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3600 3600w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3700 3700w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3800 3800w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w3900 3900w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4000 4000w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4100 4100w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4200 4200w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4300 4300w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4400 4400w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4500 4500w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4600 4600w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4700 4700w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4800 4800w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w4900 4900w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5000 5000w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5100 5100w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5200 5200w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5300 5300w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5400 5400w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5500 5500w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5600 5600w,
+                    https://lh3.googleusercontent.com/aOAzesZgdmL5QU4Dc3vIQ9VprUQomxgJEIT7-5EzGTwx9lfGpH_xzAu2pknfTilyBZE2_GmSHaMESOI3R9GGRnOoMpTQXqoEYWdOiJg=rw-e365-w5700 5700w
+                  "
+                  sizes="(min-width: 1024px) 400px, (min-width: 768px) and (max-width: 1023px) 700px, calc(100vw - 32px)"
+                  loading="lazy"
+                  fetchpriority="low"
+                  width="3000"
+                  height="2000"
+                />
+                <div class="pb-4 text-center md:pb-0 md:text-left">
+                  <h3 class="text-2xl font-bold">
+                    Free Pixel 7 with eligible trade-in
+                  </h3>
+                  <span class="block">
+                    $599 back via 24 monthly bill creadits.
+                    <a href="#!" class="text-secondary hover:underline"
+                      >Terms apply</a
+                    >
+                  </span>
                   <button
-                    class="inline-block bg-main text-yellow uppercase px-2 py-2 md:py-4 mt-2 rounded"
+                    class="hover:bg-secondary/80 hover:border-secondary/80 bg-secondary border-secondary mt-4 rounded-full border-2 px-8 py-2 font-medium text-white"
                   >
-                    Đăng ký ngay
+                    Order now
                   </button>
                 </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="container px-2 mx-auto">
-          <div class="flex flex-col md:flex-row gap-4">
-            <img
-              src="./public/images/Thiet-ke-chua-co-ten-19 1.png"
-              alt="Khu-can-ho-cao-cap-nhat-Vung-Tau"
-            />
-            <div>
-              <h3 class="text-3xl text-center text-purple font-bold uppercase">
-                Ben House
-              </h3>
-              <h5 class="text-center text-2xl text-main font-bold">
-                Khu căn hộ cao cấp nhất Vũng Tàu
-              </h5>
-              <p class="text-center text-main">
-                BEN HOUSE tọa lạc trong toà nhà The Sóng – Vũng Tàu, được sinh
-                ra cho những chuyến đi đầy ngẫu hứng của người Sài Gòn, để chủ
-                nhân tìm về mỗi khi mệt mỏi, là nơi để chủ nhân tái tạo năng
-                lượng sau những ngày dài làm việc căng thẳng. Không chỉ sở hữu
-                vị trí “hơn cả kim cương”, The Sóng còn sở hữu kiến trúc độc đáo
-                được lấy cảm hứng từ những cơn sóng uốn lượn của biển cả. Hãy
-                đến với BEN HOUSE – The Sóng Vũng Tàu để tận hưởng những ngày
-                nghỉ trọn vẹn!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="text-center my-5">
-          <h3 class="text-3xl text-main font-bold uppercase">
-            biệt thự - villa
-          </h3>
-          <p class="text-base text-main">BEN HOUSE Nơi ta đến là nhà</p>
-        </div>
-        <div
-          class="card-list container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5 px-4 sm:px-2"
-        >
-          <!-- item 1 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 2 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 3 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 4 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="flex flex-col items-center my-14">
-          <h3 class="text-3xl text-main font-bold uppercase">
-            homestay - căn hộ
-          </h3>
-          <p class="text-base text-main">BEN HOUSE Nơi ta đến là nhà</p>
-          <div>
-            <img src="./public/images/Group 5.png" alt="" />
-          </div>
-        </div>
-        <div
-          class="card-list container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5 px-4 sm:px-2"
-        >
-          <!-- item 1 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 2 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 3 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-          <!-- item 4 -->
-          <div
-            class="card-item flex flex-col items-center shadow-xl px-2 rounded"
-          >
-            <div class="rounded-md">
-              <img src="./public/images/Rectangle 9.png" alt="item-9" />
-            </div>
-            <span class="text-main font-bold mt-2">14 Lương Văn Can </span>
-            <div class="flex items-center justify-center mt-1">
-              <span class="text-3xl sm:text-2xl md:text-3xl text-yellow"
-                >5/5</span
-              >
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-              <img
-                class="w-12 h-12 sm:w-9 sm:h-9"
-                src="./public/images/Icon-Star.svg"
-                alt="Icon-Star"
-              />
-            </div>
-            <div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-36 1.png"
-                  alt=""
-                />
-                <span class="font-medium">12a Khách </span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-33 1.png"
-                  alt=""
-                />
-                <span class="font-medium">3 phòng ngủ, 4 giường, 4 wc</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-37 1.png"
-                  alt=""
-                />
-                <span class="font-medium">BBQ</span>
-              </div>
-              <div class="border-b-2 flex gap-4 items-center py-2">
-                <img
-                  class="basis-1/6"
-                  src="./public/images/Thiet-ke-chua-co-ten-34 1.png"
-                  alt=""
-                />
-                <span class="font-medium">Gần bãi sau </span>
-              </div>
-            </div>
-            <span class="text-yellow font-bold py-2"
-              >Ngày thường 1.5 triệu
-            </span>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="flex flex-col items-center mt-14 mb-12">
-          <h3 class="text-3xl text-main font-bold uppercase">
-            hotel khách sạn
-          </h3>
-          <div>
-            <img src="./public/images/Group 5.png" alt="" />
-          </div>
-        </div>
-        <div class="container mx-auto">
-          <div class="grid grid-cols-1 px-4 md:py-0 md:grid-cols-2 gap-4 my-5">
-            <div class="flex flex-col shadow-xl">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 15.png"
-                alt=""
-              />
-              <div class="h-full flex flex-col justify-center items-center">
-                <span class="block text-xl">Phòng Premium</span>
-                <div class="pb-2">
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
-                >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
-              </div>
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
-                >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
-              </div>
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
-                >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
-              </div>
-              <div class="flex flex-col shadow-xl">
-                <img
-                  class="w-full"
-                  src="./public/images/Rectangle 15.png"
-                  alt=""
-                />
-                <div
-                  class="h-full flex flex-col justify-center items-center py-2"
-                >
-                  <span class="block text-xl">Phòng Premium</span>
-                  <span class="text-slate-500 line-through"
-                    >2.000.000<span class="underline">₫</span></span
-                  >
-                  <span class="text-rose-500"
-                    >1.395.000<span class="underline">₫</span></span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="h-fit min-h-full flex justify-center">
-            <a
-              href="#"
-              class="inline-block bg-main text-white uppercase px-4 py-4 mt-2 md:px-2 rounded"
-              >xem thêm</a
-            >
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="relative">
-          <img
-            class="w-full"
-            src="./public/images/Screenshot (180) 1.png"
-            alt=""
-          />
-          <h2
-            class="absolute top-[9%] left-1/4 -translate-x-[15%] md:top-[20%] md:left-1/2 transform md:-translate-x-1/2 text-main text-3xl md:text-4xl font-bold uppercase"
-          >
-            địa điểm nổi bật
-          </h2>
-          <div
-            class="absolute top-1/2 md:left-1/2 transform -translate-y-[35%] md:-translate-x-1/2"
-          >
-            <div class="flex gap-0.5 items-center px-4 md:px-0">
-              <div>
-                <img
-                  class="w-72 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 40.png"
-                  alt=""
-                />
-              </div>
-              <div class="flex flex-col gap-0.5 shadow-lg">
-                <img
-                  class="w-80 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-                <img
-                  class="border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-              </div>
-              <div class="flex flex-col gap-0.5 shadow-lg">
-                <img
-                  class="w-96 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 28.png"
-                  alt=""
-                />
-                <img
-                  class="border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 28.png"
-                  alt=""
-                />
-              </div>
-              <div class="flex flex-col gap-0.5 shadow-lg">
-                <img
-                  class="w-80 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-                <img
-                  class="border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 30.png"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="w-72 border-4 md:border-8 shadow-lg"
-                  src="./public/images/Rectangle 40.png"
-                  alt=""
-                />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <h3 class="text-3xl text-center text-main font-bold mt-8 uppercase">
-          tin tức
-        </h3>
-        <div class="container mx-auto px-4 md:px-2">
+      <section class="mx-auto mb-4 max-w-full px-2 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-12 gap-4">
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-5"
+            class="col-span-12 col-start-1 flex flex-col gap-4 md:flex-row lg:col-span-8 lg:col-start-3"
           >
-            <div class="flex flex-col shadow-xl rounded">
+            <div class="flex flex-col items-center px-2">
               <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
+                src="https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M"
+                alt="Two people sitting on a flying phone"
+                srcset="
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w100   100w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w200   200w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w300   300w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w400   400w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w500   500w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w600   600w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w700   700w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w800   800w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w900   900w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1000 1000w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1100 1100w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1200 1200w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1300 1300w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1400 1400w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1500 1500w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1600 1600w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1700 1700w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1800 1800w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w1900 1900w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2000 2000w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2100 2100w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2200 2200w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2300 2300w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2400 2400w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2500 2500w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2600 2600w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2700 2700w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2800 2800w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w2900 2900w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3000 3000w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3100 3100w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3200 3200w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3300 3300w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3400 3400w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3500 3500w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3600 3600w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3700 3700w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3800 3800w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w3900 3900w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4000 4000w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4100 4100w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4200 4200w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4300 4300w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4400 4400w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4500 4500w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4600 4600w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4700 4700w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4800 4800w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w4900 4900w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5000 5000w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5100 5100w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5200 5200w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5300 5300w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5400 5400w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5500 5500w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5600 5600w,
+                  https://lh3.googleusercontent.com/hxUWC6WBo5j3AKRTNmU74txMwU8ScIZ-aepwXIKv1KMhc7SPWhAbQjjtydXZnvCckt6MtLAKh7UbH55PRHp2nm8G5Gtg6MbkSzoDZ4M=rw-e365-w5700 5700w
+                "
+                sizes="(min-width: 1024px) 290px, (min-width: 768px) and (max-width: 1023px) 309px, calc(100vw - 32px)"
+                loading="lazy"
+                fetchpriority="low"
+                width="3000"
+                height="2000"
               />
+              <span class="text-center">
+                Join from home without activatien fees or contracts
+              </span>
+              <a href="#!" class="mt-4 text-blue-500 hover:underline">
+                Explore plans
+              </a>
+            </div>
+            <div class="flex flex-col items-center px-2">
+              <img
+                src="https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS"
+                alt="Person holding a shield"
+                srcset="
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w100   100w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w200   200w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w300   300w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w400   400w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w500   500w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w600   600w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w700   700w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w800   800w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w900   900w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1000 1000w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1100 1100w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1200 1200w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1300 1300w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1400 1400w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1500 1500w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1600 1600w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1700 1700w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1800 1800w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w1900 1900w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2000 2000w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2100 2100w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2200 2200w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2300 2300w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2400 2400w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2500 2500w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2600 2600w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2700 2700w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2800 2800w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w2900 2900w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3000 3000w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3100 3100w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3200 3200w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3300 3300w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3400 3400w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3500 3500w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3600 3600w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3700 3700w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3800 3800w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w3900 3900w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4000 4000w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4100 4100w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4200 4200w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4300 4300w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4400 4400w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4500 4500w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4600 4600w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4700 4700w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4800 4800w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w4900 4900w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5000 5000w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5100 5100w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5200 5200w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5300 5300w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5400 5400w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5500 5500w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5600 5600w,
+                  https://lh3.googleusercontent.com/-syHWqr4-NUoF4J8HOSM2jGZ0n_C33U716AjCP9178WtIG_sTuqL5C6lPb8jA1GGlGI7fD5NOIjFGpE8ayE_jgOffqb0t9JWjclXq8qS=rw-e365-w5700 5700w
+                "
+                sizes="(min-width: 1024px) 290px, (min-width: 768px) and (max-width: 1023px) 309px, calc(100vw - 32px)"
+                loading="lazy"
+                fetchpriority="low"
+                width="3000"
+                height="2000"
+              />
+              <span class="text-center">
+                Stay safe with privacy and security features
+              </span>
+              <a
+                href="#!"
+                class="mt-4 font-medium text-blue-500 hover:underline"
+              >
+                See how Fi helps keep you safe
+              </a>
+            </div>
+            <div class="flex h-full flex-col items-center px-2">
+              <img
+                src="https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o"
+                alt="Image of a phone door with people on either side"
+                srcset="
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w100   100w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w200   200w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w300   300w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w400   400w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w500   500w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w600   600w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w700   700w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w800   800w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w900   900w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1000 1000w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1100 1100w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1200 1200w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1300 1300w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1400 1400w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1500 1500w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1600 1600w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1700 1700w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1800 1800w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w1900 1900w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2000 2000w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2100 2100w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2200 2200w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2300 2300w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2400 2400w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2500 2500w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2600 2600w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2700 2700w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2800 2800w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w2900 2900w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3000 3000w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3100 3100w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3200 3200w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3300 3300w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3400 3400w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3500 3500w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3600 3600w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3700 3700w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3800 3800w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w3900 3900w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4000 4000w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4100 4100w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4200 4200w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4300 4300w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4400 4400w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4500 4500w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4600 4600w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4700 4700w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4800 4800w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w4900 4900w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5000 5000w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5100 5100w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5200 5200w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5300 5300w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5400 5400w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5500 5500w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5600 5600w,
+                  https://lh3.googleusercontent.com/qzaYJ-etG5mXVTOSn1Cn_-2B4qRJIoK2zVtg3k1I7TrSizcrN9Y5MvEcf4CU8BIsbDItsOtOD7JZZS1fZPMHYt39Y5iB0zyhhcpbv-o=rw-e365-w5700 5700w
+                "
+                sizes="(min-width: 1024px) 290px, (min-width: 768px) and (max-width: 1023px) 309px, calc(100vw - 32px)"
+                loading="lazy"
+                fetchpriority="low"
+                width="3000"
+                height="2000"
+              />
+              <span class="text-center"> Share with your favorite people </span>
+              <a
+                href="#!"
+                class="mt-4 font-medium text-blue-500 hover:underline"
+              >
+                Explore Fi for families and groups
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="rounded-b-mul bg-gradient-to-t from-blue-100 to-blue-50/60"
+      >
+        <div class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+          <div
+            class="bg-plans bg-p-mul bg-s-mul h-full w-full bg-no-repeat pb-12 pt-32"
+          >
+            <div class="grid grid-cols-8 gap-4 lg:grid-cols-12">
               <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
+                class="col-span-8 col-start-1 text-center md:col-span-6 md:col-start-2 md:px-8 lg:col-start-4"
               >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col shadow-xl rounded">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
-              />
-              <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
-              >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col shadow-xl rounded">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
-              />
-              <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
-              >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-            <div class="flex flex-col shadow-xl rounded">
-              <img
-                class="w-full"
-                src="./public/images/Rectangle 43.png"
-                alt=""
-              />
-              <div
-                class="h-full flex flex-col justify-center items-center p-4 text-center"
-              >
-                <span class="block font-medium"
-                  >Bật Mí 6 Địa Điểm Chụp Hình Đẹp Tại Vũng Tàu Khiến Bạn Thích
-                  Mê</span
-                >
-                <span class="text-xs text-slate-500"
-                  >Vũng Tàu thường là nơi bạn có thể hòa mình vào biển, rong
-                  chơi</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="relative">
-          <img
-            class="w-full h-72 sm:h-96 lg:h-[512px]"
-            src="./public/images/Rectangle 65.png"
-            alt=""
-          />
-          <div
-            class="absolute top-1/2 left-0 right-0 transform -translate-y-1/2"
-          >
-            <h2
-              class="text-center text-white font-bold text-xl md:text-3xl uppercase"
-            >
-              đánh giá khách hàng
-            </h2>
-            <div class="container mx-auto mt-4 md:mt-8">
-              <div
-                class="grid grid-cols-1 justify-items-stretch sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-2"
-              >
-                <div
-                  class="flex gap-4 md:flex-col items-center justify-center h-full bg-main bg-opacity-60 p-4 pt-2 shadow-lg rounded"
-                >
-                  <img
-                    class="w-12 h-12 md:w-20 md:h-20 rounded-full"
-                    src="./public/images/Ellipse 6.png"
-                    alt=""
-                  />
-                  <div class="flex flex-col md:items-center md:justify-center">
-                    <div>
-                      <div class="flex mt-1">
-                        <span class="text-2xl text-yellow">5/5</span>
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
-                        <img
-                          class="w-6 h-6 md:w-9 md:h-9"
-                          src="./public/images/Icon-Star.svg"
-                          alt="Icon-Star"
-                        />
+                <h2 class="mb-6 text-3xl font-bold text-gray-900">
+                  Plans that fit your data usage
+                </h2>
+                <p class="pb-10 font-medium">
+                  Choose the plan that works for you. Go unlimited or pay only
+                  for the data you use. If your needs change, you can easily
+                  switch plans anytime, at no extra cost.
+                </p>
+                <div class="pt-10">
+                  <span>Unlimited plans</span>
+                  <div
+                    class="mb-2 flex justify-between rounded-[24px] border-t-4 border-blue-700 bg-white p-4 shadow-lg"
+                  >
+                    <div class="text-left">
+                      <h4 class="mb-5 font-bold">Simply Unlimited</h4>
+                      <span>Most affordable plan if you use lots of data</span>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-bold">
+                        $20 <span class="font-normal">ea</span>
                       </div>
-                      <h3
-                        class="text-lg md:text-2xl text-white md:text-center font-bold"
+                      <span>$80 for 4</span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex justify-between rounded-[24px] border-t-4 border-blue-700 bg-white p-4 shadow-lg"
+                  >
+                    <div class="text-left">
+                      <h4 class="mb-5 font-bold">Unlimited Plus</h4>
+                      <div class="my-2">
+                        Great if you travel, want unlimited tethering, or use
+                        lots of data
+                      </div>
+                      <div
+                        class="flex w-fit items-center gap-2 rounded-full bg-blue-300 py-1 px-3"
                       >
-                        mai linh
-                      </h3>
+                        <img
+                          alt=""
+                          class="h-6 w-6"
+                          src="https://fonts.gstatic.com/s/i/productlogos/youtube/v9/192px.svg"
+                        />
+                        <span class="uppercase"
+                          >WITH 1 YEAR OF YOUTUBE PREMIUM</span
+                        >
+                      </div>
                     </div>
-                    <div>
-                      <p class="text-white">
-                        Trải nghiệm tại Căn hộ Prenium thật tuyệt với gia đình
-                        tôi, căn hộ có đầy đủ tiện nghi, được ở đây lâu chắc
-                        chúng tôi sẽ thọ thêm 10 năm tuổi vì đây chính là nơi
-                        đáng sống!
-                      </p>
+                    <div class="text-right">
+                      <div class="font-bold">
+                        $40 <span class="font-normal">ea</span>
+                      </div>
+                      <span>$160 for 4</span>
                     </div>
                   </div>
-                </div>
-                <div class="hidden w-full sm:block sm:w-auto">
+                  <div class="my-4">Pay as you go</div>
                   <div
-                    class="flex flex-col items-center justify-center h-full bg-main bg-opacity-60 p-4 pt-2 shadow-lg rounded"
+                    class="flex justify-between rounded-[24px] border-t-4 border-blue-700 bg-white p-4 shadow-lg"
                   >
-                    <img
-                      class="rounded-full"
-                      src="./public/images/Ellipse 6.png"
-                      alt=""
-                    />
-                    <div class="flex mt-1">
-                      <span class="text-2xl text-yellow">5/5</span>
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
+                    <div class="text-left">
+                      <h4 class="mb-5 font-bold">Flexible</h4>
+                      <span
+                        >Best if you want to only pay for the data you use</span
+                      >
                     </div>
-                    <h3 class="text-2xl text-white font-bold">mai linh</h3>
-                    <p class="text-white">
-                      Trải nghiệm tại Căn hộ Prenium thật tuyệt với gia đình
-                      tôi, căn hộ có đầy đủ tiện nghi, được ở đây lâu chắc chúng
-                      tôi sẽ thọ thêm 10 năm tuổi vì đây chính là nơi đáng sống!
-                    </p>
+                    <div class="text-right">
+                      <div class="font-bold">
+                        $17 <span class="font-normal">ea + $10/GB</span>
+                      </div>
+                      <span>$65 for 4 + data</span>
+                    </div>
                   </div>
-                </div>
-                <div class="hidden w-full lg:block lg:w-auto">
-                  <div
-                    class="flex flex-col items-center justify-center h-full bg-main bg-opacity-60 p-4 pt-2 shadow-lg rounded"
+                  <button
+                    class="hover:bg-secondary/80 hover:border-secondary/80 bg-secondary border-secondary mt-8 rounded-full border-2 px-8 py-2 font-medium text-white"
                   >
-                    <img
-                      class="rounded-full"
-                      src="./public/images/Ellipse 6.png"
-                      alt=""
-                    />
-                    <div class="flex mt-1">
-                      <span class="text-2xl text-yellow">5/5</span>
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                      <img
-                        width="34"
-                        height="34"
-                        src="./public/images/Icon-Star.svg"
-                        alt="Icon-Star"
-                      />
-                    </div>
-                    <h3 class="text-2xl text-white font-bold">mai linh</h3>
-                    <p class="text-white">
-                      Trải nghiệm tại Căn hộ Prenium thật tuyệt với gia đình
-                      tôi, căn hộ có đầy đủ tiện nghi, được ở đây lâu chắc chúng
-                      tôi sẽ thọ thêm 10 năm tuổi vì đây chính là nơi đáng sống!
-                    </p>
-                  </div>
+                    Order now
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
+      <section class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+        <div
+          class="mb-12 grid grid-cols-8 gap-4 text-center md:mb-0 md:text-left lg:grid-cols-12"
+        >
+          <div
+            class="col-span-8 col-start-1 flex flex-col justify-center md:col-span-3 md:col-start-2 lg:col-span-4 lg:col-start-3"
+          >
+            <h2 class="mb-4 text-3xl font-bold text-gray-900">
+              Super fast coverage, 5G included
+            </h2>
+            <p class="mb-4">
+              Fi gives you great coverage, coast to coast. With a phone designed
+              for Fi, you'll get even better coverage as it intelligently
+              switches between networks and secure Wi-Fi connections. All plans
+              include nationwide 5G for supported phones.
+            </p>
+            <div>
+              <button
+                class="text-secondary hover:bg-secondary/25 mr-2 rounded-full border-2 py-2 px-8 font-medium"
+              >
+                See coverage
+              </button>
+            </div>
+          </div>
+          <div
+            class="col-span-8 col-start-1 row-start-1 md:col-span-4 md:col-start-5 lg:col-span-5 lg:col-start-7"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj"
+              alt="People playing music"
+              srcset="
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w100   100w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w200   200w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w300   300w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w400   400w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w500   500w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w600   600w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w700   700w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w800   800w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w900   900w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1000 1000w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1100 1100w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1200 1200w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1300 1300w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1400 1400w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1500 1500w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1600 1600w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1700 1700w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1800 1800w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w1900 1900w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2000 2000w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2100 2100w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2200 2200w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2300 2300w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2400 2400w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2500 2500w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2600 2600w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2700 2700w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2800 2800w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w2900 2900w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3000 3000w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3100 3100w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3200 3200w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3300 3300w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3400 3400w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3500 3500w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3600 3600w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3700 3700w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3800 3800w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w3900 3900w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4000 4000w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4100 4100w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4200 4200w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4300 4300w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4400 4400w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4500 4500w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4600 4600w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4700 4700w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4800 4800w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w4900 4900w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5000 5000w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5100 5100w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5200 5200w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5300 5300w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5400 5400w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5500 5500w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5600 5600w,
+                https://lh3.googleusercontent.com/0MdhXHXrYVcXxmyqOMaDx4fZGzLox2ZkyfaaGYaeK3f9zdNumTUnM4XS4tJRK3-GUmJZr7BvJ1pmspowiniBHvMyFSOvREclAhwxwyrj=rw-e365-w5700 5700w
+              "
+              sizes="(min-width: 1024px) 570px, (min-width: 768px) and (max-width: 1023px) 476px, calc(100vw - 32px)"
+              height="4777"
+              width="4688"
+              loading="lazy"
+              fetchpriority="low"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-8 gap-4 lg:grid-cols-12">
+          <div
+            class="col-span-8 col-start-1 md:col-span-4 lg:col-span-5 lg:col-start-2"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M"
+              alt="Person behind a phone"
+              srcset="
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w100   100w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w200   200w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w300   300w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w400   400w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w500   500w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w600   600w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w700   700w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w800   800w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w900   900w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1000 1000w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1100 1100w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1200 1200w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1300 1300w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1400 1400w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1500 1500w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1600 1600w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1700 1700w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1800 1800w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w1900 1900w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2000 2000w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2100 2100w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2200 2200w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2300 2300w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2400 2400w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2500 2500w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2600 2600w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2700 2700w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2800 2800w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w2900 2900w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3000 3000w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3100 3100w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3200 3200w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3300 3300w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3400 3400w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3500 3500w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3600 3600w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3700 3700w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3800 3800w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w3900 3900w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4000 4000w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4100 4100w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4200 4200w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4300 4300w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4400 4400w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4500 4500w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4600 4600w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4700 4700w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4800 4800w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w4900 4900w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5000 5000w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5100 5100w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5200 5200w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5300 5300w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5400 5400w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5500 5500w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5600 5600w,
+                https://lh3.googleusercontent.com/U49HyRAQROmW82OuPAtX4c2P7DczWt6ntcG8PadMWfI6KfbgMOJeEhXbH_NyjCU61tO3HufOME9grw4gpLfsvvUj99WdhNg6WOr643M=rw-e365-w5700 5700w
+              "
+              sizes="(min-width: 1024px) 570px, (min-width: 768px) and (max-width: 1023px) 476px, calc(100vw - 32px)"
+              height="5208"
+              width="5528"
+              loading="lazy"
+              fetchpriority="low"
+            />
+          </div>
+          <div
+            class="col-span-8 col-start-1 flex flex-col justify-center text-center md:col-span-3 md:col-start-5 md:text-left lg:col-span-4 lg:col-start-7"
+          >
+            <h2 class="text-3xl font-bold">Use your favorite phone</h2>
+            <div class="pb-6">
+              <h3 class="pt-8 pb-5 text-lg font-bold">
+                Looking for a new phone?
+              </h3>
+              <p class="pb-6 font-medium">
+                Browse phones from Google, Samsung, and Motorola.
+              </p>
+              <button
+                class="text-secondary hover:bg-secondary/25 mr-2 rounded-full border-2 py-2 px-8 font-medium"
+              >
+                See phones
+              </button>
+            </div>
+            <div>
+              <h3 class="pb-5 text-lg font-bold">
+                Already have a phone you love?
+              </h3>
+              <p class="pb-6 font-medium">
+                Most Android and iPhone® devices work with Fi, and it's easy to
+                get set up at home.
+                <a class="text-secondary hover:underline" href="#!"
+                  >Check compatibility</a
+                >
+              </p>
+              <button
+                class="text-secondary hover:bg-secondary/25 mr-2 rounded-full border-2 py-2 px-8 font-medium"
+              >
+                Bring your phone
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-12 gap-4">
+          <div
+            class="col-span-12 col-start-1 my-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-8 lg:col-start-3"
+          >
+            <div class="flex flex-col items-center">
+              <img
+                src="https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p"
+                alt="Giant phone with a lock and a person standing in front with a key"
+                srcset="
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w100   100w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w200   200w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w300   300w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w400   400w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w500   500w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w600   600w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w700   700w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w800   800w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w900   900w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1000 1000w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1100 1100w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1200 1200w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1300 1300w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1400 1400w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1500 1500w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1600 1600w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1700 1700w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1800 1800w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w1900 1900w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2000 2000w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2100 2100w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2200 2200w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2300 2300w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2400 2400w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2500 2500w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2600 2600w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2700 2700w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2800 2800w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w2900 2900w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3000 3000w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3100 3100w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3200 3200w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3300 3300w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3400 3400w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3500 3500w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3600 3600w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3700 3700w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3800 3800w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w3900 3900w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4000 4000w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4100 4100w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4200 4200w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4300 4300w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4400 4400w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4500 4500w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4600 4600w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4700 4700w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4800 4800w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w4900 4900w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5000 5000w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5100 5100w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5200 5200w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5300 5300w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5400 5400w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5500 5500w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5600 5600w,
+                  https://lh3.googleusercontent.com/NN66XBRY6gSqkDxh-Bgf2-7j4ODiieO6qKvPnzprPYQtkeHe172fHTozNt8VS5_a4wBGnSwjFOrZBrMKqoEfToyo30bsKg0ovrVop24p=rw-e365-w5700 5700w
+                "
+                sizes="(min-width: 1024px) 448px, (min-width: 768px) and (max-width: 1023px) 475px, calc(100vw - 32px)"
+                height="1048"
+                width="1656"
+                loading="lazy"
+                fetchpriority="low"
+              />
+              <h3 class="mb-5 mt-3 text-center text-xl font-bold">
+                Connect safely with privacy and security features
+              </h3>
+              <a href="#!" class="text-secondary font-semibold hover:underline">
+                See how Fi helps protect you
+              </a>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                src="https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM"
+                alt="People playing on a large slide"
+                srcset="
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w100   100w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w200   200w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w300   300w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w400   400w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w500   500w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w600   600w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w700   700w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w800   800w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w900   900w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1000 1000w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1100 1100w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1200 1200w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1300 1300w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1400 1400w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1500 1500w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1600 1600w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1700 1700w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1800 1800w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w1900 1900w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2000 2000w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2100 2100w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2200 2200w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2300 2300w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2400 2400w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2500 2500w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2600 2600w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2700 2700w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2800 2800w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w2900 2900w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3000 3000w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3100 3100w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3200 3200w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3300 3300w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3400 3400w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3500 3500w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3600 3600w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3700 3700w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3800 3800w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w3900 3900w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4000 4000w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4100 4100w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4200 4200w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4300 4300w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4400 4400w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4500 4500w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4600 4600w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4700 4700w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4800 4800w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w4900 4900w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5000 5000w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5100 5100w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5200 5200w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5300 5300w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5400 5400w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5500 5500w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5600 5600w,
+                  https://lh3.googleusercontent.com/8SvH3Nae06U55EpakzR4Oi85skwF0PjDpSlcNEwg_Kp6t1BXnE9sbMw2Vu682uHym58QDRI6ANainP0emt4SvPB1G09iOj6ulFrNGjM=rw-e365-w5700 5700w
+                "
+                sizes="(min-width: 1024px) 448px, (min-width: 768px) and (max-width: 1023px) 475px, calc(100vw - 32px)"
+                height="1072"
+                width="1656"
+                loading="lazy"
+                fetchpriority="low"
+              />
+              <h3 class="mb-5 mt-3 text-center text-xl font-bold">
+                Share with your favorite people
+              </h3>
+              <a href="#!" class="text-secondary font-semibold hover:underline">
+                Explore Fi for families and groups
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="mx-auto mb-8 max-w-full px-2 sm:px-6 md:mb-0 lg:px-8">
+          <div class="grid grid-cols-12 gap-4">
+            <div
+              class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 lg:rounded-lg lg:border-2 lg:px-3 lg:py-9"
+            >
+              <div class="flex flex-col items-center justify-between gap-6">
+                <div class="text-center">
+                  <h3 class="mb-6 text-3xl font-bold">Ready to&nbsp;switch?</h3>
+                  <p class="mb-6">
+                    Get started from anywhere and bring your existing number.
+                  </p>
+                  <button
+                    class="bg-secondary border-secondary hover:bg-secondary/80 hover:border-secondary/80 rounded-full border-2 px-8 py-2 font-medium text-white"
+                  >
+                    Join Fi
+                  </button>
+                  <p class="text-secondary mt-6 font-medium hover:underline">
+                    See plans and pricing
+                  </p>
+                </div>
+                <div class="w-4/5 border-t"></div>
+                <div class="text-center">
+                  <h2 class="text-3xl font-bold">
+                    Still exploring?
+                    <br />
+                    Let's keep in touch.
+                  </h2>
+                  <p class="font-medium">
+                    Be the first to know about the latest phones, promotions,
+                    and features available on Fi.
+                  </p>
+                </div>
+                <div class="flex justify-center">
+                  <input
+                    placeholder="Enter your email address"
+                    maxlength="256"
+                    type="email"
+                    class="rounded-l-full border px-3 py-2"
+                  />
+                  <button
+                    class="bg-secondary border-secondary hover:bg-secondary/80 hover:border-secondary/80 rounded-r-full border px-3 py-2 font-medium text-white"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="hidden w-full md:block"
+          src="https://lh3.googleusercontent.com/tkDkAyl4cB7eghkfR53WgAcSuI05ULb70Jgcd2xqlElCAA7-Sgk9eYp9hnP-A0kcpBoOuvpmlHIYSV8Lt2jSnw_CMrgHJm8pfvc41eR-Cpie3p2m7k-5uxvvFT3xHjqJfJC-uQ=rw-e365-w1800"
+          alt=""
+        />
+        <img
+          class="w-full md:hidden"
+          src="https://lh3.googleusercontent.com/izY6Uup-Tz3mJE-p1K2Op48EBQ7fV7oCxJqjPiYZ-eWJIcj4CA4E1pu5VokFf8noSxmUVh5CqW0oN7rGq4F9ZNB1r2urc1zv2d-ls3LeLq_kklIwvhd3Aa4utI2O5eqpKH39nyA=rw-e365-s0"
+          alt=""
+        />
       </section>
     </main>
     <footer>
-      <div class="mt-28 relative">
-        <img
-          class="w-full h-[972px] md:h-[512px] lg:h-[636px]"
-          src="./public/images/TheSongKV_1920x1080_logo 1.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 6.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 5.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 4.png"
-          alt=""
-        />
-        <img
-          class="absolute top-0 w-full h-full"
-          src="./public/images/Vector 7.png"
-          alt=""
-        />
-        <div
-          class="absolute top-1/2 inset-x-10 transform -translate-y-1/2 lg:-translate-y-1/3"
-        >
-          <div class="flex flex-col md:flex-row gap-4">
-            <div class="w-full basis-2/5">
-              <h3 class="text-3xl text-center text-white font-bold uppercase">
-                Ben House
-              </h3>
-              <p class="text-white mt-4">
-                Tại BENHOUSE, không chỉ bố mẹ mà các thiên thần nhỏ luôn có thể
-                tìm thấy niềm vui ở bất cứ đâu: lúc thả mình trên những chiếc
-                giường êm ái, lúc tự tay nấu những món ăn yêu thích, hoặc lúc
-                thỏa thích đùa vui tại khu vực Vui chơi trẻ em, hồ bơi vô cực…
-                Đặc biệt hơn, chỉ cần băng qua con đường Thùy Vân, là cả nhà
-                mình đã có thể đến với bãi biển để tắm biển và vui chơi tại đây.
-              </p>
-            </div>
-            <div class="basis-1/5 text-white">
-              <h3 class="text-2xl text-center font-bold uppercase">
-                thông tin liên hệ
-              </h3>
-              <p class="mt-4">
-                Địa chỉ: 109/15 Võ Thị Sáu, Phường 2, Tp Vũng Tàu
-              </p>
-              <p>Hotline: 0937.686.079 - 0764.820.563</p>
-              <p>Email: maopq.mt@vietsov.com.vn</p>
-              <p>Website: benhousevungtau.com</p>
-              <p>
-                Bản đồ
+      <div class="mx-auto my-8 max-w-full px-2 sm:px-6 md:my-14 lg:px-8">
+        <div class="grid grid-cols-12 gap-4">
+          <div class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-2">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center">
+              <a href="#!">
                 <img
-                  class="inline rounded-full"
-                  src="./public/images/image 1.png"
+                  src="https://storage.googleapis.com/googwebreview.appspot.com/uploads/fi/google.svg"
                   alt=""
                 />
-              </p>
-            </div>
-            <div class="basis-2/5 w-full h-full text-white">
-              <h3
-                class="text-2xl text-center sm:mb-5 md:mt-0 md:ml-5 font-bold uppercase"
-              >
-                quy trình làm việc
-              </h3>
-              <div
-                class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 ml-4 md:mt-4"
-              >
-                <ul class="list-disc">
-                  <li class="mb-4">Booking đặt lịch</li>
-                  <li class="mb-4">Check nhận phòng</li>
-                  <li class="mb-4">Chính sách thanh toánh</li>
-                  <li class="mb-4">Nhận phòng</li>
-                </ul>
-                <div class="flex flex-col justify-around">
-                  <div class="pb-8">
-                    <a
-                      href="#"
-                      class="text-2xl font-bold px-6 py-2 bg-green rounded-full"
-                      >0937.686.079</a
-                    >
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="text-2xl font-bold px-6 py-2 bg-red rounded-full"
-                      >0764.820.563</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="hidden w-auto sm:flex md:hidden lg:flex mt-4">
-                <img
-                  class="mr-4 sm:mb-2 lg:mr-4 w-1/2 h-1/2 sm:w-1/3 sm:h-1/3"
-                  src="./public/images/Rectangle 59.png"
-                  alt=""
-                />
-                <img
-                  class="w-1/2 h-1/2 sm:w-1/3 sm:h-1/3"
-                  src="./public/images/Rectangle 60.png"
-                  alt=""
-                />
+              </a>
+              <div class="mt-4 flex flex-col gap-4 md:mt-0 md:flex-row">
+                <a
+                  class="text-secondary text-sm font-medium hover:underline"
+                  href="#!"
+                >
+                  International Rates
+                </a>
+                <a
+                  class="text-secondary text-sm font-medium hover:underline"
+                  href="#!"
+                >
+                  FAQ
+                </a>
+                <a
+                  class="text-secondary text-sm font-medium hover:underline"
+                  href="#!"
+                >
+                  Privacy
+                </a>
+                <a
+                  class="text-secondary text-sm font-medium hover:underline"
+                  href="#!"
+                >
+                  Terms
+                </a>
+                <a
+                  class="text-secondary text-sm font-medium hover:underline"
+                  href="#!"
+                >
+                  Customer support
+                </a>
+                <a
+                  class="text-secondary text-sm font-medium hover:underline"
+                  href="#!"
+                >
+                  Broadband disclosure
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="absolute bottom-0 w-full bg-yellow">
-          <div
-            class="flex md:flex-row justify-around text-white py-2 px-2 md:px-0"
-          >
-            <span class="md:text-xl">
-              2023 &copy; BEN HOUSE designed by sotagroup.vn
-            </span>
-            <span class="md:text-xl"
-              >Đang online: 10 | Tổng truy cập: 144520</span
-            >
           </div>
         </div>
       </div>
